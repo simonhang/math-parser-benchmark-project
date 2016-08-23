@@ -1,10 +1,10 @@
 #include "BenchTinyExpr.h"
 
 #include <cmath>
+#include <cstring>
 
 #include "tinyexpr/tinyexpr.h"
 
-#include <string.h>
 
 //-------------------------------------------------------------------------------------------------
 BenchTinyExpr::BenchTinyExpr()
@@ -43,10 +43,10 @@ double BenchTinyExpr::DoBenchmark(const std::string& sExpr, long iCount)
 
    if ((0 == expression) || error)
    {
-	   char buf[128];
-	   sprintf(buf, "Parsing error at %d.", error);
-	   StopTimerAndReport(buf);
-	   return m_fTime1;
+      char buf[128];
+      sprintf(buf, "Parsing error at %d.", error);
+      StopTimerAndReport(buf);
+      return m_fTime1;
    }
 
    //Prime the I and D caches for the expression

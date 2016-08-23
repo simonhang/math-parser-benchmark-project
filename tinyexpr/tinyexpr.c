@@ -59,7 +59,7 @@ typedef struct state {
     const char *start;
     const char *next;
     int type;
-    union {double value; const double *bound; const void *function;};
+    union {double value; const double *bound; void *function;};
     void *context;
 
     const te_variable *lookup;
